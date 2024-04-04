@@ -368,7 +368,7 @@ namespace MediaBrowser.MediaEncoding.Encoder
 
         public bool CheckVaapiDeviceByDriverName(string driverName, string renderNodePath)
         {
-            if (!OperatingSystem.IsLinux())
+            if (!OperatingSystem.IsLinux() && !OperatingSystem.IsFreeBSD())
             {
                 return false;
             }
@@ -392,7 +392,7 @@ namespace MediaBrowser.MediaEncoding.Encoder
 
         public bool CheckVulkanDrmDeviceByExtensionName(string renderNodePath, string[] vulkanExtensions)
         {
-            if (!OperatingSystem.IsLinux())
+            if (!OperatingSystem.IsLinux() && !OperatingSystem.IsFreeBSD())
             {
                 return false;
             }
